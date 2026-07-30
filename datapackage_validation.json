@@ -1,6 +1,6 @@
 {
   "version": "4.16.6",
-  "time": 0.021,
+  "time": 0.017,
   "errors": [],
   "tasks": [
     {
@@ -38,13 +38,13 @@
         "scheme": "file",
         "title": "Insira um título humanamente legível para este recurso.",
         "stats": {
-          "hash": "9d8c65c81e88c62819f5b166a838cd82",
-          "bytes": 7671,
+          "hash": "443511666e80a09d98531abe23869fab",
+          "bytes": 12929,
           "fields": 4,
-          "rows": 23
+          "rows": 39
         }
       },
-      "time": 0.012,
+      "time": 0.01,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -66,16 +66,1122 @@
         "unique-error"
       ],
       "partial": false,
-      "errors": [],
+      "errors": [
+        {
+          "label": "",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "labels": [
+            "tipo",
+            "tema",
+            "legislacao",
+            "descricao",
+            "link"
+          ],
+          "rowPositions": [
+            1
+          ],
+          "code": "extra-label",
+          "name": "Extra Label",
+          "tags": [
+            "#table",
+            "#header",
+            "#label"
+          ],
+          "note": "",
+          "message": "There is an extra label \"\" in header at position \"5\"",
+          "description": "The header of the data source contains label that does not exist in the provided schema."
+        },
+        {
+          "label": "tipo",
+          "fieldName": "tema",
+          "fieldNumber": 1,
+          "fieldPosition": 1,
+          "labels": [
+            "tipo",
+            "tema",
+            "legislacao",
+            "descricao",
+            "link"
+          ],
+          "rowPositions": [
+            1
+          ],
+          "code": "incorrect-label",
+          "name": "Incorrect Label",
+          "tags": [
+            "#table",
+            "#header",
+            "#label"
+          ],
+          "note": "",
+          "message": "Label \"tipo\" in field tema at position \"1\" does not match the field name in the schema",
+          "description": "One of the data source header does not match the field name defined in the schema."
+        },
+        {
+          "label": "tema",
+          "fieldName": "legislacao",
+          "fieldNumber": 2,
+          "fieldPosition": 2,
+          "labels": [
+            "tipo",
+            "tema",
+            "legislacao",
+            "descricao",
+            "link"
+          ],
+          "rowPositions": [
+            1
+          ],
+          "code": "incorrect-label",
+          "name": "Incorrect Label",
+          "tags": [
+            "#table",
+            "#header",
+            "#label"
+          ],
+          "note": "",
+          "message": "Label \"tema\" in field legislacao at position \"2\" does not match the field name in the schema",
+          "description": "One of the data source header does not match the field name defined in the schema."
+        },
+        {
+          "label": "legislacao",
+          "fieldName": "descricao",
+          "fieldNumber": 3,
+          "fieldPosition": 3,
+          "labels": [
+            "tipo",
+            "tema",
+            "legislacao",
+            "descricao",
+            "link"
+          ],
+          "rowPositions": [
+            1
+          ],
+          "code": "incorrect-label",
+          "name": "Incorrect Label",
+          "tags": [
+            "#table",
+            "#header",
+            "#label"
+          ],
+          "note": "",
+          "message": "Label \"legislacao\" in field descricao at position \"3\" does not match the field name in the schema",
+          "description": "One of the data source header does not match the field name defined in the schema."
+        },
+        {
+          "label": "descricao",
+          "fieldName": "link",
+          "fieldNumber": 4,
+          "fieldPosition": 4,
+          "labels": [
+            "tipo",
+            "tema",
+            "legislacao",
+            "descricao",
+            "link"
+          ],
+          "rowPositions": [
+            1
+          ],
+          "code": "incorrect-label",
+          "name": "Incorrect Label",
+          "tags": [
+            "#table",
+            "#header",
+            "#label"
+          ],
+          "note": "",
+          "message": "Label \"descricao\" in field link at position \"4\" does not match the field name in the schema",
+          "description": "One of the data source header does not match the field name defined in the schema."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=213015&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "ACORDO DE LENIÊNCIA",
+            "Resolução Conjunta CGE/AGE Nº 05/2024, 03 de dezembro de 2024",
+            "Define os procedimentos para a negociação, a celebração e o acompanhamento dos acordos de leniência de que trata a Lei n° 12.846, de 1° de agosto de 2013, no âmbito da Controladoria-Geral do Estado – CGE e da Advocacia-Geral do Estado – AGE.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=213015&marc="
+          ],
+          "rowNumber": 1,
+          "rowPosition": 2,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"2\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=216861&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "ANTICORRUPÇÃO",
+            "Resolução Conjunta CGE/AGE/CBMMG/DER/IPSEMG/OGE/PCMG/ PMMG/SEF/SEGOV/SEJUSP/SEPLAG Nº 01, de 18 de julho de 2025",
+            "Aprova a 4ª Edição do Plano Anticorrupção do Poder Executivo do Estado de Minas Gerais",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=216861&marc="
+          ],
+          "rowNumber": 2,
+          "rowPosition": 3,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"3\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/Dec/45902/2012/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "CADASTRO GERAL DE FORNECEDORES - CAGEF ",
+            "Decreto Estadual nº 45.902, de 27 de janeiro de 2012",
+            "Dispõe sobre o Cadastro Geral de Fornecedores – CAGEF, previsto no art. 34 da Lei Federal nº 8.666, de 21 de junho de 1993, e regulamenta a Lei nº 13.994, de 18 de setembro de 2001, que institui o Cadastro de Fornecedores Impedidos de Licitar e Contratar com a Administração Pública Estadual – CAFIMP.",
+            "https://www.almg.gov.br/legislacao-mineira/Dec/45902/2012/"
+          ],
+          "rowNumber": 3,
+          "rowPosition": 4,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"4\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/Lei/13994/2001/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "CADASTRO GERAL DE FORNECEDORES - CAGEF ",
+            "Lei Estadual nº 13.994 de 18 de setembro de 2001",
+            "Institui o Cadastro de Fornecedores Impedidos de Licitar e Contratar com a Administração Pública Estadual. ",
+            "https://www.almg.gov.br/legislacao-mineira/Lei/13994/2001/"
+          ],
+          "rowNumber": 4,
+          "rowPosition": 5,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"5\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=213467&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "CADASTRO GERAL DE FORNECEDORES - CAGEF ",
+            "Resolução Conjunta SEGOV/CGE/ Nº 02, 30 de dezembro de 2024",
+            "Estabelece o regulamento do Cadastro Geral de Convenentes do Estado de Minas Gerais.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=213467&marc="
+          ],
+          "rowNumber": 5,
+          "rowPosition": 6,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"6\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=202421&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "CONFLITO DE INTERESSES",
+            "Resolução Conjunta SEPLAG/CGE Nº 10.668, 3 de novembro de 2022",
+            "Dispõe sobre o escopo, o fluxo e os critérios para avaliação objetiva de conflitos de interesses, bem como sobre as responsabilidades e os prazos para sua realização, nos processos relativos ao recebimento de doações de bens móveis e serviços e o recebimento de bens móveis em comodato pela Administração Pública direta, autárquica e fundacional do Poder Executivo.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=202421&marc="
+          ],
+          "rowNumber": 6,
+          "rowPosition": 7,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"7\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Constituição Federal",
+            "CONSTITUIÇÃO DA REPÚBLICA ",
+            "Constituição da República Federativa do Brasil de 1988 ",
+            "Consittuição Federal do Brasil",
+            "https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm"
+          ],
+          "rowNumber": 7,
+          "rowPosition": 8,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"8\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/leis/l4320.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "CONTABILIDADE PÚBLICA",
+            "Lei Federal nº 4.320, 17 de março de 1964",
+            "Estatui normas gerais de direito financeiro para elaboração dos orçamentos e balanços públicos.",
+            "https://www.planalto.gov.br/ccivil_03/leis/l4320.htm"
+          ],
+          "rowNumber": 8,
+          "rowPosition": 9,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"9\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/24313/2023/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "ESTRUTURA GOVERNAMENTAL DO ESTADO DE MINAS GERAIS ",
+            "Lei Estadual nº 24.313, de 28 de abril de 2023",
+            "Estabelece a estrutura orgânica da Administração Pública do Poder Executivo do Estado, bem como as suas competências e /ou atribuições (Lei Estadual nº 24.313/2023). ",
+            "https://www.almg.gov.br/legislacao-mineira/texto/LEI/24313/2023/"
+          ],
+          "rowNumber": 9,
+          "rowPosition": 10,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"10\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=209680&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "GESTÃO DE RISCOS",
+            "Resolução Conjunta CGE/SEPLAG Nº 01, 8 de abril de 2024",
+            "Institui a Política de Gestão de Riscos nas Contratações Públicas no âmbito da Administração Pública direta, autárquica e fundacional do Poder Executivo.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=209680&marc="
+          ],
+          "rowNumber": 10,
+          "rowPosition": 11,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"11\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=212145&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "GESTÃO DE RISCOS",
+            "Resolução Conjunta CGE/SEPLAG Nº 04, 4 de outubro de 2024",
+            "Altera a Resolução Conjunta CGE/SEPLAG nº 1, de 08 de abril de 2024, que institui a Política de Gestão de Riscos nas Contratações Públicas no âmbito da Administração Pública direta, autárquica e fundacional do Poder Executivo.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=212145&marc="
+          ],
+          "rowNumber": 11,
+          "rowPosition": 12,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"12\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/DEC/48383/2022/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "GOVERNO DIGITAL ",
+            "Decreto Estadual nº 48.383, de 18 de março de 2022",
+            "Regulamenta o Governo Digital Estadual, no âmbito da Administração Pública direta, autárquica e fundacional do Poder Executivo. ",
+            "https://www.almg.gov.br/legislacao-mineira/DEC/48383/2022/"
+          ],
+          "rowNumber": 12,
+          "rowPosition": 13,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"13\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "GOVERNO DIGITAL ",
+            "Decreto Federal nº 8.777, 11 de maio de 2016",
+            "Institui a Política de Dados Abertos do Poder Executivo federal.",
+            "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm"
+          ],
+          "rowNumber": 13,
+          "rowPosition": 14,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"14\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "GOVERNO DIGITAL ",
+            "Lei Federal nº 14.129, de 29 de março de 2021 ",
+            "Dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública e altera a Lei nº 7.116, de 29 de agosto de 1983, a Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), a Lei nº 12.682, de 9 de julho de 2012, e a Lei nº 13.460, de 26 de junho de 2017. ",
+            "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm"
+          ],
+          "rowNumber": 14,
+          "rowPosition": 15,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"15\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=171158",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "GOVERNO DIGITAL ",
+            "Resolução CGE N° 020, 06 de agosto de 2014",
+            "Estabelece conceitos e diretrizes, no âmbito da Administração direta, autárquica e fundacional do Poder Executivo Estadual, em matéria de dados abertos governamentais.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=171158"
+          ],
+          "rowNumber": 15,
+          "rowPosition": 16,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"16\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/14167/2002/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "LICITAÇÕES E CONTRATOS ",
+            "Lei Estadual nº 14.167, de 10 de janeiro de 2002",
+            "Dispõe sobre a adoção, no âmbito do Estado, do pregão como modalidade de licitação para a aquisição de bens e serviços comuns e dá outras providências. ",
+            "https://www.almg.gov.br/legislacao-mineira/texto/LEI/14167/2002/"
+          ],
+          "rowNumber": 16,
+          "rowPosition": 17,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"17\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "LICITAÇÕES E CONTRATOS ",
+            "Lei Federal nº 14.133 de 01 de abril de 2021 ",
+            "Lei de Licitações e Contratos Administrativos. ",
+            "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm"
+          ],
+          "rowNumber": 17,
+          "rowPosition": 18,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"18\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/atividade-parlamentar/leis/legislacao-mineira/lei/texto/?tipo=CON&num=1989&ano=1989&comp=&cons=1",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Constituição Estadual",
+            "PLANEJAMENTO",
+            "Constituição do Estado de Minas Gerais de 1989",
+            "Consittuição do Estado de Minas Gerais",
+            "https://www.almg.gov.br/atividade-parlamentar/leis/legislacao-mineira/lei/texto/?tipo=CON&num=1989&ano=1989&comp=&cons=1"
+          ],
+          "rowNumber": 18,
+          "rowPosition": 19,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"19\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/LEI/24677/2024/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "PLANEJAMENTO",
+            "Lei Estadual nº 24.677 de 16 de janeiro de 2024",
+            "Plano Plurianual de Ação Governamental (PPAG) para o quadriênio 2024-2027",
+            "https://www.almg.gov.br/legislacao-mineira/LEI/24677/2024/"
+          ],
+          "rowNumber": 19,
+          "rowPosition": 20,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"20\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/LEI/25440/2025/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "PLANEJAMENTO",
+            "Lei Estadual nº 25.440, de 06 de agosto de 2025",
+            "Dispõe sobre as diretrizes para a elaboração e a execução da Lei Orçamentária Anual para o exercício de 2026.",
+            "https://www.almg.gov.br/legislacao-mineira/LEI/25440/2025/"
+          ],
+          "rowNumber": 20,
+          "rowPosition": 21,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"21\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/atividade-parlamentar/leis/legislacao-mineira/lei/?tipo=LEI&num=25698&ano=2026&comp=&cons=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "PLANEJAMENTO",
+            "Lei Estadual nº 25.698 de 14 de janeiro de 2026",
+            "Estima as receitas e fixa as despesas do Orçamento Fiscal do Estado e do Orçamento de Investimento das Empresas Controladas pelo Estado para o exercício financeiro de 2026.",
+            "https://www.almg.gov.br/atividade-parlamentar/leis/legislacao-mineira/lei/?tipo=LEI&num=25698&ano=2026&comp=&cons="
+          ],
+          "rowNumber": 21,
+          "rowPosition": 22,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"22\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/DEC/48419/2022/?utm_source=chatgpt.com",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "PLANO MINEIRO DE INTEGRIDADE",
+            "Decreto Estadual nº 48.419, de 16 de maio de 2022",
+            "Dispõe sobre a Política Mineira de Promoção da Integridade.",
+            "https://www.almg.gov.br/legislacao-mineira/DEC/48419/2022/?utm_source=chatgpt.com"
+          ],
+          "rowNumber": 22,
+          "rowPosition": 23,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"23\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=183657&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "PLANO MINEIRO DE INTEGRIDADE",
+            "Resolução Conjunta SEPLAG/CGE Nº 9881/2018, 24 de julho de 2018",
+            "Dispõe sobre a atuação conjunta para o fortalecimento do ambiente de integridade no âmbito da Administração Pública estadual nos termos do Decreto Estadual nº 47.185, de 13 de maio de 2017, que estabelece o Plano Mineiro de Promoção da Integridade – PMPI.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=183657&marc="
+          ],
+          "rowNumber": 23,
+          "rowPosition": 24,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"24\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/DEC/48582/2023/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "PROTEÇÃO AO DENUNCIANTE ",
+            "Decreto Estadual nº 48.582, de 03 de março de 2023 ",
+            "Dispõe sobre procedimentos e medidas de proteção à identidade do denunciante de ilícito ou de irregularidade praticados contra órgãos e entidades da Administração Pública direta, autárquica e fundacional do Poder Executivo. ",
+            "https://www.almg.gov.br/legislacao-mineira/DEC/48582/2023/"
+          ],
+          "rowNumber": 24,
+          "rowPosition": 25,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"25\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=216976&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "PROTEÇÃO AO DENUNCIANTE ",
+            "Resolução Conjunta OGE/CGE nº 1 de 13/08/2025 ",
+            "Dispõe sobre os mecanismos de proteção ao denunciante de ilícito ou de irregularidade praticados contra órgãos e entidades da Administração Pública direta, autárquica e fundacional do Poder Executivo Estadual. ",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=216976&marc="
+          ],
+          "rowNumber": 25,
+          "rowPosition": 26,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"26\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/texto/DEC/48237/2021/?cons=1",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "PROTEÇÃO DE DADOS PESSOAIS ",
+            "Decreto Estadual nº 48.237 de 22 de julho de 2021",
+            "Dispõe sobre a aplicação da Lei Federal nº 13.709, de 14 de agosto de 2018, Lei Geral de Proteção de Dados Pessoais – LGPD, no âmbito da Administração Pública direta e indireta do Poder Executivo. ",
+            "https://www.almg.gov.br/legislacao-mineira/texto/DEC/48237/2021/?cons=1"
+          ],
+          "rowNumber": 26,
+          "rowPosition": 27,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"27\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "PROTEÇÃO DE DADOS PESSOAIS ",
+            "Lei Federal nº 13.709, de 14 de agosto de 2018 ",
+            "Lei Geral de Proteção de Dados Pessoais (LGPD). ",
+            "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+          ],
+          "rowNumber": 27,
+          "rowPosition": 28,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"28\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.fazenda.mg.gov.br/governo/assuntos_municipais/previsao_repasses/previsao_repasse_ICMS/portarias_ICMS/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Portarias",
+            "REPASSES CONSTITUCIONAIS ",
+            "Portarias de repasses de ICMS, IPI e IPVA, da União e dos estados, para os municípios ",
+            "Portarias da Superintendência Central de Administração Financeira (SCAF) publicadas no Diário Oficial do Estado, com os valores consolidados por mês, relativas ao exercício atual.",
+            "https://www.fazenda.mg.gov.br/governo/assuntos_municipais/previsao_repasses/previsao_repasse_ICMS/portarias_ICMS/"
+          ],
+          "rowNumber": 28,
+          "rowPosition": 29,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"29\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/DEC/48821/2024/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "RESPONSABILIZAÇÃO DE PESSOA JURÍDICA ",
+            "Decreto Estadual nº 48.821 de 13 de maio de 2024",
+            "Dispõe sobre o Processo Administrativo de Responsabilização, previsto na Lei Federal nº 12.846, de 1º de agosto de 2013, no âmbito da Administração Pública do Poder Executivo Estadual. ",
+            "https://www.almg.gov.br/legislacao-mineira/DEC/48821/2024/"
+          ],
+          "rowNumber": 29,
+          "rowPosition": 30,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"30\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12846.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "RESPONSABILIZAÇÃO DE PESSOA JURÍDICA ",
+            "Lei Federal nº 12.846 de 1º de agosto de 2013 ",
+            "Dispõe sobre a responsabilização administrativa e civil de pessoas jurídicas pela prática de atos contra a administração pública, nacional ou estrangeira, e dá outras providências. ",
+            "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12846.htm"
+          ],
+          "rowNumber": 30,
+          "rowPosition": 31,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"31\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp156.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei Complementar",
+            "TRANSPARÊNCIA FISCAL",
+            "Lei Complementar Federal nº 156/2016",
+            "Altera dispositivos da Lei de Responsabilidade Fiscal.",
+            "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp156.htm"
+          ],
+          "rowNumber": 31,
+          "rowPosition": 32,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"32\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp178.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei Complementar",
+            "TRANSPARÊNCIA FISCAL",
+            "Lei Complementar Federal nº 178/2021",
+            "Programa de Acompanhamento Fiscal. Impacta demonstrativos e transparência das contas públicas.",
+            "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp178.htm"
+          ],
+          "rowNumber": 32,
+          "rowPosition": 33,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"33\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/DEC/45969/2012/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Decreto Estadual nº 45.969, de 24 de maio de 2012 ",
+            "Regulamenta o acesso à informação no âmbito do Poder Executivo Estadual. ",
+            "https://www.almg.gov.br/legislacao-mineira/DEC/45969/2012/"
+          ],
+          "rowNumber": 33,
+          "rowPosition": 34,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"34\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.almg.gov.br/legislacao-mineira/texto/DEC/46644/2014/",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Decreto Estadual nº 46.644, de 06 de novembro de 2014",
+            "Dispõe sobre o Código de Conduta Ética do Agente Público e da Alta Administração Estadual.",
+            "https://www.almg.gov.br/legislacao-mineira/texto/DEC/46644/2014/"
+          ],
+          "rowNumber": 34,
+          "rowPosition": 35,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"35\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10540.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Decreto",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Decreto Federal nº 10.540, de 5 de novembro de 2020",
+            "Dispõe sobre o padrão mínimo de qualidade do Sistema Único e Integrado de Execução Orçamentária, Administração Financeira e Controle.",
+            "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10540.htm"
+          ],
+          "rowNumber": 35,
+          "rowPosition": 36,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"36\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp101.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei Complementar",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Lei Complementar nº 101, de 04 de Maio de 2000 ",
+            "Estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal e dá outras providências.",
+            "https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp101.htm"
+          ],
+          "rowNumber": 36,
+          "rowPosition": 37,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"37\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp131.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei Complementar",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Lei Complementar nº 131, de 27 de Maio de 2009 ",
+            "Acrescenta dispositivos à Lei Complementar nº 101, de 4 de maio de 2000, que estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal e dá outras providências, a fim de determinar a disponibilização, em tempo real, de informações pormenorizadas sobre a execução. ",
+            "https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp131.htm"
+          ],
+          "rowNumber": 37,
+          "rowPosition": 38,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"38\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Lei Federal nº 12.527, de 18 de novembro de 2011 ",
+            "Regulamenta o direito constitucional de acesso dos cidadãos às informações públicas e é aplicável aos três Poderes da União, dos Estados, do Distrito Federal e dos Municípios. ",
+            "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+          ],
+          "rowNumber": 38,
+          "rowPosition": 39,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"39\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=168426&marc=",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Resolução",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Resolução Conjunta SEPLAG/CGE Nº 8676, de 30 de julho de 2012",
+            "Disciplina, no âmbito do Poder Executivo Estadual, a forma de divulgação da remuneração e subsídio recebidos por ocupante de cargo, posto, graduação, função e emprego público, incluindo auxílios, jetons e outras vantagens pecuniárias do pessoal na ativa.",
+            "https://www.pesquisalegislativa.mg.gov.br/LegislacaoCompleta.aspx?cod=168426&marc="
+          ],
+          "rowNumber": 39,
+          "rowPosition": 40,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"40\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        }
+      ],
       "stats": {
-        "errors": 0
+        "errors": 44
       },
-      "valid": true
+      "valid": false
     }
   ],
   "stats": {
-    "errors": 0,
+    "errors": 44,
     "tasks": 1
   },
-  "valid": true
+  "valid": false
 }
