@@ -405,14 +405,20 @@
             <!-- Filtros -->
             <div class="dashboard-card">
                 <div class="row g-3 align-items-end">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <label class="filter-label"><i class="material-icons">search</i> Buscar</label>
                         <input type="text" class="form-control" id="filtroTexto" placeholder="Digite palavra-chave...">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <label class="filter-label"><i class="material-icons">topic</i> Tema</label>
                         <select class="form-select" id="filtroTema">
                             <option value="all">Todos os temas</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="filter-label"><i class="material-icons">category</i> Tipo</label>
+                        <select class="form-select" id="filtroTipo">
+                            <option value="all">Todos os tipos</option>
                         </select>
                     </div>
     		</div>
@@ -463,9 +469,10 @@
                     <table class="table table-hover" id="tabelaAcervo" style="width:100%;">
                         <thead>
                             <tr>
-                                <th style="width: 30%;">Legislação</th>
-                                <th style="width: 25%;">Tema</th>
-                                <th style="width: 35%;">Descrição</th>
+                                <th style="width: 12%;">Tipo</th>
+                                <th style="width: 25%;">Legislação</th>
+                                <th style="width: 20%;">Tema</th>
+                                <th style="width: 33%;">Descrição</th>
                                 <th style="width: 10%;">Link</th>
                             </tr>
                         </thead>
@@ -673,6 +680,7 @@
                 
                 // Garantir que todos os campos existam
                 dados.push({
+                    tipo: linha.tipo || '',
                     tema: linha.tema || '',
                     legislacao: linha.legislacao || '',
                     descricao: linha.descricao || '',
@@ -691,6 +699,7 @@
                 dadosFiltrados = [...dadosCompletos];
                 
                 popularFiltroTema();
+                popularFiltroTipo();
                 renderTabela();
                 
                 console.log(`Dados carregados: ${dadosCompletos.length} registros`);
@@ -725,18 +734,33 @@
             });
         }
 
+        function popularFiltroTipo() {
+            const tipos = [...new Set(dadosCompletos.map(d => d.tipo).filter(t => t))].sort();
+            const select = document.getElementById('filtroTipo');
+            select.innerHTML = '<option value="all">Todos os tipos</option>';
+            tipos.forEach(t => {
+                const opt = document.createElement('option');
+                opt.value = t;
+                opt.textContent = t;
+                select.appendChild(opt);
+            });
+        }
+
         function aplicarFiltros() {
             const temaSel = document.getElementById('filtroTema').value;
+            const tipoSel = document.getElementById('filtroTipo').value;
             const texto = document.getElementById('filtroTexto').value.toLowerCase();
             
             dadosFiltrados = dadosCompletos.filter(item => {
                 if (temaSel !== 'all' && item.tema !== temaSel) return false;
+                if (tipoSel !== 'all' && item.tipo !== tipoSel) return false;
                 if (texto) {
                     const termoBusca = texto;
+                    const tipoMatch = (item.tipo || '').toLowerCase().includes(termoBusca);
                     const temaMatch = item.tema.toLowerCase().includes(termoBusca);
                     const legisMatch = item.legislacao.toLowerCase().includes(termoBusca);
                     const descMatch = item.descricao.toLowerCase().includes(termoBusca);
-                    return temaMatch || legisMatch || descMatch;
+                    return tipoMatch || temaMatch || legisMatch || descMatch;
                 }
                 return true;
             });
@@ -748,6 +772,7 @@
 
         function limparFiltros() {
             document.getElementById('filtroTema').value = 'all';
+            document.getElementById('filtroTipo').value = 'all';
             document.getElementById('filtroTexto').value = '';
             dadosFiltrados = [...dadosCompletos];
             currentPage = 1;
@@ -769,6 +794,7 @@
                 const temaClass = getTemaClass(item.tema);
                 return `
                 <tr>
+                    <td>${item.tipo || ''}</td>
                     <td><strong>${item.legislacao || ''}</strong></td>
                     <td><span class="badge-tema ${temaClass}">${item.tema || ''}</span></td>
                     <td class="descricao-texto">${item.descricao || ''}</td>
@@ -827,8 +853,8 @@
 
         // ==================== EXPORTAÇÃO ====================
         window.exportarCSV = function() {
-            const headers = ['Legislação', 'Tema', 'Descrição', 'Link'];
-            const data = dadosFiltrados.map(i => [i.legislacao, i.tema, i.descricao, i.link]);
+            const headers = ['Tipo', 'Legislação', 'Tema', 'Descrição', 'Link'];
+            const data = dadosFiltrados.map(i => [i.tipo, i.legislacao, i.tema, i.descricao, i.link]);
             let csv = headers.join(';') + '\n' + data.map(r => r.map(c => `"${(c||'').replace(/"/g,'""')}"`).join(';')).join('\n');
             const blob = new Blob(['\uFEFF' + csv], {type: 'text/csv;charset=utf-8;'});
             const link = document.createElement('a'); 
@@ -847,8 +873,8 @@
             doc.setFontSize(9); 
             doc.text(`Atualizado em: ${new Date().toLocaleString('pt-BR')}`, 15, 22);
             
-            const headers = [['Legislação', 'Tema', 'Descrição', 'Link']];
-            const data = dadosFiltrados.map(i => [i.legislacao, i.tema, i.descricao || '', i.link]);
+            const headers = [['Tipo', 'Legislação', 'Tema', 'Descrição', 'Link']];
+            const data = dadosFiltrados.map(i => [i.tipo || '', i.legislacao, i.tema, i.descricao || '', i.link]);
             
             doc.autoTable({ 
                 head: headers, 
@@ -857,10 +883,11 @@
                 styles: { fontSize: 8 }, 
                 headStyles: { fillColor: [41,67,90] },
                 columnStyles: {
-                    0: { cellWidth: 80 },
-                    1: { cellWidth: 60 },
-                    2: { cellWidth: 100 },
-                    3: { cellWidth: 40 }
+                    0: { cellWidth: 35 },
+                    1: { cellWidth: 65 },
+                    2: { cellWidth: 55 },
+                    3: { cellWidth: 90 },
+                    4: { cellWidth: 35 }
                 }
             });
             
