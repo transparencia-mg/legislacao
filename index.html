@@ -470,8 +470,8 @@
                         <thead>
                             <tr>
                                 <th style="width: 12%;">Tipo</th>
-                                <th style="width: 25%;">Legislação</th>
                                 <th style="width: 20%;">Tema</th>
+                                <th style="width: 25%;">Legislação</th>
                                 <th style="width: 33%;">Descrição</th>
                                 <th style="width: 10%;">Link</th>
                             </tr>
@@ -644,6 +644,9 @@
 
         // ==================== FUNÇÕES DE DADOS ====================
         function parseCSV(texto) {
+            // Remove BOM (marca de bytes UTF-8) que o GitHub inclui no início do arquivo,
+            // pois ele corrompe o nome do primeiro cabeçalho (ex: "tipo" vira "\uFEFFtipo")
+            texto = texto.replace(/^\uFEFF/, '');
             const linhas = texto.trim().split('\n');
             const cabecalhos = linhas[0].split(';').map(h => h.trim().toLowerCase());
             const dados = [];
@@ -795,8 +798,8 @@
                 return `
                 <tr>
                     <td>${item.tipo || ''}</td>
-                    <td><strong>${item.legislacao || ''}</strong></td>
                     <td><span class="badge-tema ${temaClass}">${item.tema || ''}</span></td>
+                    <td><strong>${item.legislacao || ''}</strong></td>
                     <td class="descricao-texto">${item.descricao || ''}</td>
                     <td>
                         ${item.link ? `<a href="${item.link}" target="_blank" class="link-legislacao" title="${item.link}"><i class="material-icons">link</i></a>` : ''}
@@ -853,8 +856,8 @@
 
         // ==================== EXPORTAÇÃO ====================
         window.exportarCSV = function() {
-            const headers = ['Tipo', 'Legislação', 'Tema', 'Descrição', 'Link'];
-            const data = dadosFiltrados.map(i => [i.tipo, i.legislacao, i.tema, i.descricao, i.link]);
+            const headers = ['Tipo', 'Tema', 'Legislação', 'Descrição', 'Link'];
+            const data = dadosFiltrados.map(i => [i.tipo, i.tema, i.legislacao, i.descricao, i.link]);
             let csv = headers.join(';') + '\n' + data.map(r => r.map(c => `"${(c||'').replace(/"/g,'""')}"`).join(';')).join('\n');
             const blob = new Blob(['\uFEFF' + csv], {type: 'text/csv;charset=utf-8;'});
             const link = document.createElement('a'); 
@@ -873,8 +876,8 @@
             doc.setFontSize(9); 
             doc.text(`Atualizado em: ${new Date().toLocaleString('pt-BR')}`, 15, 22);
             
-            const headers = [['Tipo', 'Legislação', 'Tema', 'Descrição', 'Link']];
-            const data = dadosFiltrados.map(i => [i.tipo || '', i.legislacao, i.tema, i.descricao || '', i.link]);
+            const headers = [['Tipo', 'Tema', 'Legislação', 'Descrição', 'Link']];
+            const data = dadosFiltrados.map(i => [i.tipo || '', i.tema, i.legislacao, i.descricao || '', i.link]);
             
             doc.autoTable({ 
                 head: headers, 
