@@ -212,6 +212,28 @@
             overflow: auto;
         }
 
+        .th-sortable {
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            transition: background-color 0.2s ease;
+        }
+
+        .th-sortable:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .sort-icon {
+            font-size: 16px !important;
+            vertical-align: middle;
+            opacity: 0.6;
+            margin-left: 2px;
+        }
+
+        .th-sortable.sort-active .sort-icon {
+            opacity: 1;
+        }
+
         .table thead th {
             background-color: var(--primary-dark) !important;
             color: white !important;
@@ -405,36 +427,11 @@
         <!-- ==================== ACERVO LEGISLATIVO ==================== -->
         <div id="acervo">
             
-            <!-- Filtros -->
-            <div class="dashboard-card">
-                <div class="row g-3 align-items-end">
-                    <div class="col-md-4">
-                        <label class="filter-label"><i class="material-icons">search</i> Buscar</label>
-                        <input type="text" class="form-control" id="filtroTexto" placeholder="Digite palavra-chave...">
-                    </div>
-                    <div class="col-md-4">
-                        <label class="filter-label"><i class="material-icons">topic</i> Tema</label>
-                        <select class="form-select" id="filtroTema">
-                            <option value="all">Todos os temas</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="filter-label"><i class="material-icons">category</i> Tipo</label>
-                        <select class="form-select" id="filtroTipo">
-                            <option value="all">Todos os tipos</option>
-                        </select>
-                    </div>
-    		</div>
-    		    <div class="row mt-3">
-                    <div class="col-12 d-flex gap-2">
-                        <button class="btn-primary-custom" id="btnPesquisar">
-                            <i class="material-icons">search</i> Pesquisar
-                        </button>
-                        <button class="btn-secondary-custom" id="btnLimpar">
-                            <i class="material-icons">clear</i> Limpar
-                        </button>
-                    </div>
-                </div>
+            <!-- Mensagem informativa -->
+            <div class="dashboard-card text-center">
+                <p class="mb-0" style="font-size: 17px; font-weight: 600; color: var(--primary-dark);">
+                    Consulte aqui os normativos relacionados ao Portal da Transparência
+                </p>
             </div>
 
             <!-- Barra de ações -->
@@ -472,10 +469,10 @@
                     <table class="table table-hover" id="tabelaAcervo" style="width:100%;">
                         <thead>
                             <tr>
-                                <th style="width: 12%;">Tipo</th>
-                                <th style="width: 20%;">Tema</th>
-                                <th style="width: 25%;">Legislação</th>
-                                <th style="width: 33%;">Descrição</th>
+                                <th style="width: 12%;" class="th-sortable" data-campo="tipo">Tipo <i class="material-icons sort-icon" data-campo="tipo">unfold_more</i></th>
+                                <th style="width: 20%;" class="th-sortable" data-campo="tema">Tema <i class="material-icons sort-icon" data-campo="tema">unfold_more</i></th>
+                                <th style="width: 25%;" class="th-sortable" data-campo="legislacao">Legislação <i class="material-icons sort-icon" data-campo="legislacao">unfold_more</i></th>
+                                <th style="width: 33%;" class="th-sortable" data-campo="descricao">Descrição <i class="material-icons sort-icon" data-campo="descricao">unfold_more</i></th>
                                 <th style="width: 10%;">Link</th>
                             </tr>
                         </thead>
@@ -512,6 +509,8 @@
         let currentPage = 1;
         let itemsPerPage = 50;
         let totalPaginas = 1;
+        let ordenacaoCampo = null;
+        let ordenacaoDirecao = 'asc'; // 'asc' ou 'desc'
 
         // Mapeamento de cores para temas
         const temaCores = {
@@ -610,8 +609,6 @@
                 }
             });
 
-            document.getElementById('btnPesquisar').addEventListener('click', aplicarFiltros);
-            document.getElementById('btnLimpar').addEventListener('click', limparFiltros);
             
             document.getElementById('itemsPerPage').addEventListener('change', function(e) {
                 itemsPerPage = parseInt(e.target.value);
@@ -704,8 +701,7 @@
                 dadosCompletos = parseCSV(texto);
                 dadosFiltrados = [...dadosCompletos];
                 
-                popularFiltroTema();
-                popularFiltroTipo();
+
                 renderTabela();
                 
                 console.log(`Dados carregados: ${dadosCompletos.length} registros`);
@@ -727,64 +723,46 @@
             return '';
         }
 
-        // ==================== FILTROS ====================
-        function popularFiltroTema() {
-            const temas = [...new Set(dadosCompletos.map(d => d.tema))].sort();
-            const select = document.getElementById('filtroTema');
-            select.innerHTML = '<option value="all">Todos os temas</option>';
-            temas.forEach(t => {
-                const opt = document.createElement('option');
-                opt.value = t; 
-                opt.textContent = t;
-                select.appendChild(opt);
+        // ==================== ORDENAÇÃO DAS COLUNAS ====================
+        function ordenarPor(campo) {
+            if (ordenacaoCampo === campo) {
+                ordenacaoDirecao = ordenacaoDirecao === 'asc' ? 'desc' : 'asc';
+            } else {
+                ordenacaoCampo = campo;
+                ordenacaoDirecao = 'asc';
+            }
+
+            dadosFiltrados.sort((a, b) => {
+                const valA = (a[campo] || '').toString().toLowerCase();
+                const valB = (b[campo] || '').toString().toLowerCase();
+                if (valA < valB) return ordenacaoDirecao === 'asc' ? -1 : 1;
+                if (valA > valB) return ordenacaoDirecao === 'asc' ? 1 : -1;
+                return 0;
             });
+
+            currentPage = 1;
+            atualizarIconesOrdenacao();
+            renderTabela();
+            setTimeout(iframeUpdateHeight, 200);
         }
 
-        function popularFiltroTipo() {
-            const tipos = [...new Set(dadosCompletos.map(d => d.tipo).filter(t => t))].sort();
-            const select = document.getElementById('filtroTipo');
-            select.innerHTML = '<option value="all">Todos os tipos</option>';
-            tipos.forEach(t => {
-                const opt = document.createElement('option');
-                opt.value = t;
-                opt.textContent = t;
-                select.appendChild(opt);
-            });
-        }
-
-        function aplicarFiltros() {
-            const temaSel = document.getElementById('filtroTema').value;
-            const tipoSel = document.getElementById('filtroTipo').value;
-            const texto = document.getElementById('filtroTexto').value.toLowerCase();
-            
-            dadosFiltrados = dadosCompletos.filter(item => {
-                if (temaSel !== 'all' && item.tema !== temaSel) return false;
-                if (tipoSel !== 'all' && item.tipo !== tipoSel) return false;
-                if (texto) {
-                    const termoBusca = texto;
-                    const tipoMatch = (item.tipo || '').toLowerCase().includes(termoBusca);
-                    const temaMatch = item.tema.toLowerCase().includes(termoBusca);
-                    const legisMatch = item.legislacao.toLowerCase().includes(termoBusca);
-                    const descMatch = item.descricao.toLowerCase().includes(termoBusca);
-                    return tipoMatch || temaMatch || legisMatch || descMatch;
+        function atualizarIconesOrdenacao() {
+            document.querySelectorAll('.th-sortable').forEach(th => {
+                const campo = th.getAttribute('data-campo');
+                const icone = th.querySelector('.sort-icon');
+                if (campo === ordenacaoCampo) {
+                    th.classList.add('sort-active');
+                    icone.textContent = ordenacaoDirecao === 'asc' ? 'arrow_upward' : 'arrow_downward';
+                } else {
+                    th.classList.remove('sort-active');
+                    icone.textContent = 'unfold_more';
                 }
-                return true;
             });
-            
-            currentPage = 1;
-            renderTabela();
-            setTimeout(iframeUpdateHeight, 200);
         }
 
-        function limparFiltros() {
-            document.getElementById('filtroTema').value = 'all';
-            document.getElementById('filtroTipo').value = 'all';
-            document.getElementById('filtroTexto').value = '';
-            dadosFiltrados = [...dadosCompletos];
-            currentPage = 1;
-            renderTabela();
-            setTimeout(iframeUpdateHeight, 200);
-        }
+        document.querySelectorAll('.th-sortable').forEach(th => {
+            th.addEventListener('click', () => ordenarPor(th.getAttribute('data-campo')));
+        });
 
         // ==================== RENDERIZAÇÃO DA TABELA ====================
         function renderTabela() {
