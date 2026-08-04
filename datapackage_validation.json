@@ -38,10 +38,10 @@
         "scheme": "file",
         "title": "Insira um título humanamente legível para este recurso.",
         "stats": {
-          "hash": "a17a8942fb8b2a5bdbf8b9ec0a1a6a5b",
-          "bytes": 9107,
+          "hash": "15a18da1121c5f0694c10ac266ebb1ba",
+          "bytes": 10240,
           "fields": 4,
-          "rows": 26
+          "rows": 29
         }
       },
       "time": 0.012,
@@ -846,16 +846,91 @@
           "note": "",
           "message": "Row at position \"27\" has an extra value in field at position \"5\"",
           "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "TRANSPARÊNCIA PÚBLICA e ACESSO À INFORMAÇÃO ",
+            "Lei Federal nº 12.527/2011",
+            "Regula o acesso a informações previsto no inciso XXXIII do art. 5º , no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal; altera a Lei nº 8.112, de 11 de dezembro de 1990; revoga a Lei nº 11.111, de 5 de maio de 2005, e dispositivos da Lei nº 8.159, de 8 de janeiro de 1991; e dá outras providências.",
+            "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+          ],
+          "rowNumber": 27,
+          "rowPosition": 28,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"28\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "PROTEÇÃO DE DADOS PESSOAIS ",
+            "Lei Federal nº 13.709/2018",
+            "Lei Geral de Proteção de Dados Pessoais (LGPD).",
+            "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+          ],
+          "rowNumber": 28,
+          "rowPosition": 29,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"29\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
+        },
+        {
+          "cell": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm",
+          "fieldName": "",
+          "fieldNumber": 4,
+          "fieldPosition": 5,
+          "cells": [
+            "Lei",
+            "GOVERNO DIGITAL ",
+            "Lei Federal nº 14.129/2021",
+            "Dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública e altera a Lei nº 7.116, de 29 de agosto de 1983, a Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), a Lei nº 12.682, de 9 de julho de 2012, e a Lei nº 13.460, de 26 de junho de 2017.",
+            "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm"
+          ],
+          "rowNumber": 29,
+          "rowPosition": 30,
+          "code": "extra-cell",
+          "name": "Extra Cell",
+          "tags": [
+            "#table",
+            "#row",
+            "#cell"
+          ],
+          "note": "",
+          "message": "Row at position \"30\" has an extra value in field at position \"5\"",
+          "description": "This row has more values compared to the header row (the first row in the data source). A key concept is that all the rows in tabular data must have the same number of columns."
         }
       ],
       "stats": {
-        "errors": 31
+        "errors": 34
       },
       "valid": false
     }
   ],
   "stats": {
-    "errors": 31,
+    "errors": 34,
     "tasks": 1
   },
   "valid": false
